@@ -11,8 +11,8 @@ export class FlightsSearchComponent {
   viewContainer: ViewContainerRef;
 
   constructor(
-    @Inject(Injector) private injector,
-    @Inject(ComponentFactoryResolver) private cfr) { }
+    @Inject(Injector) private injector: any,
+    @Inject(ComponentFactoryResolver) private cfr: any) { }
 
   search() {
     alert('Not implemented for this demo!');
@@ -22,7 +22,7 @@ export class FlightsSearchComponent {
     const comp = await import('../lazy/lazy.component').then(m => m.LazyComponent);
 
     const factory = this.cfr.resolveComponentFactory(comp);
-    this.viewContainer.createComponent(factory, null, this.injector);
+    this.viewContainer.createComponent(factory, undefined, this.injector);
   }
 
 
